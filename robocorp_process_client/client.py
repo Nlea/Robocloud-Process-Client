@@ -1,18 +1,10 @@
 import requests
 import json
 import time
-import os
-from dotenv import load_dotenv 
 
 
-load_dotenv()
-workspace_robo = os.environ.get('WORKSPACEID-ROBOCLOUD')
-process_robo = os.environ.get('PROCESSID-ROBOCLOUD')
-authorization_robo = os.environ.get('AUTHORIZATION-TOKEN-ROBOCLOUD')
-
-
-class client:
-    def __init__(self, workspace = workspace_robo, process = process_robo, authorization = authorization_robo, endpoint ='https://api.eu1.robocorp.com/process-v1', pollingForRobocloud = 30): 
+class Client:
+    def __init__(self, workspace, process, authorization, endpoint ='https://api.eu1.robocorp.com/process-v1', pollingForRobocloud = 30): 
         self.workspace = workspace
         self.process = process
         self.authorization = authorization
